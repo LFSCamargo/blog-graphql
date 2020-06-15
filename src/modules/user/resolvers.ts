@@ -1,3 +1,4 @@
+import { globalIdField } from "graphql-relay";
 import { ResolverType, GraphQLContext } from "@types";
 import { Constants, encryptPassword, signJWT, authenticate } from "~/utils";
 import User from "./model";
@@ -9,10 +10,13 @@ interface SignInArgs {
 }
 
 export default {
+  User: {
+    id: globalIdField("User"),
+  },
   Query: {
     me: async (_root: any, _args: any, { user }: GraphQLContext) => {
       if (!user) {
-        throw Error(Constants.errors.notLogged);
+        throw new Error(Constants.errors.notLogged);
       }
 
       return user;

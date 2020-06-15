@@ -19,7 +19,10 @@ export interface GraphQLContext {
   pubsub: PubSub;
 }
 
-export interface PageInfo {
-  count: number;
-  hasNextPage: boolean;
+export interface ConnectionArgs {
+  after: string;
+  first: number;
+  before: string;
+  last: number;
+  search: string;
 }

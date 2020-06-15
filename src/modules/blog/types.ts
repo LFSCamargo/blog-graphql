@@ -1,37 +1,32 @@
 import { gql } from "apollo-server-koa";
 
 export default gql`
-  enum Role {
-    USER
-    WRITER
-    ADMIN
-  }
-
-  type User {
+  type Post {
     id: ID!
     _id: ID
-    name: String
-    role: Role
-    email: String
+    title: String
+    description: String
+    body: String
+    user: User
     active: Boolean
   }
 
-  type AuthOutput {
-    token: String
-    user: User
+  type PostMutation {
+    message: String
+    post: Post
   }
 
-  type UserEdge {
-    node: User!
+  type PostEdge {
+    node: Post!
     cursor: String!
   }
 
-  type UserConnection {
+  type PostConnection {
     count: Int!
     totalCount: Int!
     startCursorOffset: Int!
     endCursorOffset: Int!
     pageInfo: PageInfoExtended!
-    users: [UserEdge]!
+    users: [PostEdge]!
   }
 `;

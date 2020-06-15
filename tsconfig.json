@@ -27,7 +27,8 @@
       "~/modules": ["src/modules"],
       "~/utils": ["src/utils"],
       "~/graphql": ["src/graphql"],
-      "~/config": ["src/config"]
+      "~/config": ["src/config"],
+      "~/constants": ["src/constants"]
     }
   },
   "include": ["**/*"],
