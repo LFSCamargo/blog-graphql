@@ -33,12 +33,16 @@ const rootTypes = gql`
       title: String!
       body: String!
       description: String!
+      topic: String!
+      image: String!
     ): PostMutation
     editPost(
       _id: String!
-      title: String
-      body: String
-      description: String
+      title: String!
+      body: String!
+      description: String!
+      topic: String!
+      image: String!
     ): PostMutation
     deletePost(_id: String!): PostMutation
   }

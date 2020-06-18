@@ -4,6 +4,8 @@ export default gql`
   type Post {
     id: ID!
     _id: ID
+    image: String
+    topic: String
     title: String
     description: String
     body: String

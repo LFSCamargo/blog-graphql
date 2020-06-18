@@ -11,7 +11,7 @@ export default {
     // Creates a new Post for a user
     createPost: async (
       _: any,
-      { title, description, body }: Blog,
+      { title, description, body, topic, image }: Blog,
       { user }: GraphQLContext
     ) => {
       if (!user) {
@@ -23,6 +23,8 @@ export default {
       }
 
       const post = new blogModel({
+        image,
+        topic,
         title,
         description,
         body,
@@ -39,7 +41,7 @@ export default {
     // Edits a existing post for a user
     editPost: async (
       _: any,
-      { _id, title, description, body }: Blog,
+      { _id, title, description, body, topic, image }: Blog,
       { user }: GraphQLContext
     ) => {
       if (!user) {
@@ -57,6 +59,8 @@ export default {
       }
 
       await post.update({
+        topic,
+        image,
         title,
         description,
         body,
