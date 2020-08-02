@@ -4,7 +4,7 @@ import { ROLES } from "~/constants";
 export interface User extends mongoose.Document {
   _id: string;
   name: string;
-  role: "USER" | "ADMIN" | "WRITER";
+  role: "USER" | "ADMIN";
   email: string;
   password: string;
   active: boolean;

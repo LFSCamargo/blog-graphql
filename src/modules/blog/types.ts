@@ -8,7 +8,7 @@ export default gql`
     topic: String
     title: String
     description: String
-    body: String
+    link: String
     user: User
     active: Boolean
   }

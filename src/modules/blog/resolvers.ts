@@ -11,7 +11,7 @@ export default {
     // Creates a new Post for a user
     createPost: async (
       _: any,
-      { title, description, body, topic, image }: Blog,
+      { title, description, link, topic, image }: Blog,
       { user }: GraphQLContext
     ) => {
       if (!user) {
@@ -27,7 +27,7 @@ export default {
         topic,
         title,
         description,
-        body,
+        link,
         user: user._id.toString(),
       });
 
@@ -41,7 +41,7 @@ export default {
     // Edits a existing post for a user
     editPost: async (
       _: any,
-      { _id, title, description, body, topic, image }: Blog,
+      { _id, title, description, link, topic, image }: Blog,
       { user }: GraphQLContext
     ) => {
       if (!user) {
@@ -63,7 +63,7 @@ export default {
         image,
         title,
         description,
-        body,
+        link,
       });
 
       await post.save();

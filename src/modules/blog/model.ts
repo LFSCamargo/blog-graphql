@@ -6,7 +6,7 @@ export interface Blog extends mongoose.Document {
   topic: string;
   title: string;
   description: string;
-  body: string;
+  link: string;
   user: string;
   active: boolean;
 }
@@ -29,7 +29,7 @@ const Schema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    body: {
+    link: {
       type: String,
       required: true,
     },
